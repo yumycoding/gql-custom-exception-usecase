@@ -1,0 +1,18 @@
+type Query{
+    hello: String
+    msg(msg: String) : String
+    findBook(id: ID) : [BookProfile]
+}
+
+
+
+union BookProfile = Book | Error
+
+type Book{
+    id: ID
+    name: String
+}
+type Error{
+    message: String
+    code: String
+}
